@@ -82,4 +82,14 @@ resource "aws_eip" "frontend" {
 }
 
 
+resource "aws_route53_record" "frotned" {
+
+  zone_id = data.aws_route53_zone.public.zone_id
+  name    = "${var.hostname}.${var.mydomain}"
+  type    = "A"
+  ttl     = "300"
+  records = [aws_eip.frontend.public_ip]
+}
+
+
 

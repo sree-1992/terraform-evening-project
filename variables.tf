@@ -23,4 +23,15 @@ variable "instance_ami" {
   type        = string
 }
 
+variable "mydomain" {
+
+  description = "my public domain name"
+  type        = string
+}
+
+variable "hostname" {
+  description = "my hostname"
+  type        = string
+}
+
 
