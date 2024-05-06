@@ -76,4 +76,10 @@ resource "aws_instance" "frontend" {
 }
 
 
+resource "aws_eip" "frontend" {
+  instance = aws_instance.frontend.id
+  domain   = "vpc"
+}
+
+
 
