@@ -78,9 +78,10 @@ resource "aws_instance" "frontend" {
   vpc_security_group_ids = [aws_security_group.frontend_access.id]
   user_data              = file("setup.sh")
   tags = {
-    Name    = "${var.project_name}-${var.project_env}-frontend"
-    Project = "${var.project_name}"
-    Env     = "${var.project_env}"
+    Name       = "${var.project_name}-${var.project_env}-frontend"
+    Project    = "${var.project_name}"
+    Env        = "${var.project_env}"
+    Monitoring = "true"
   }
 }
 
